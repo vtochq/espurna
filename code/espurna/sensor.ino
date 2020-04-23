@@ -1013,6 +1013,18 @@ void _sensorLoad() {
     }
     #endif
 
+    #if MQ135_SUPPORT
+    {
+        MQ135Sensor * sensor = new MQ135Sensor();
+        sensor->setSamples(ANALOG_SAMPLES);
+        sensor->setDelay(ANALOG_DELAY);
+        //CICM For analog scaling
+        sensor->setFactor(ANALOG_FACTOR);
+        sensor->setOffset(ANALOG_OFFSET);
+        _sensors.push_back(sensor);
+    }
+    #endif
+
     #if BH1750_SUPPORT
     {
         BH1750Sensor * sensor = new BH1750Sensor();

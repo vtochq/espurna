@@ -1127,7 +1127,7 @@
 
 //------------------------------------------------------------------------------
 // V9261F based power sensor
-// Enable support by passing SI7021_SUPPORT=1 build flag
+// Enable support by passing V9261F_SUPPORT=1 build flag
 //------------------------------------------------------------------------------
 
 #ifndef V9261F_SUPPORT
@@ -1334,7 +1334,7 @@
 #define I2C_SUPPORT                 1
 #endif
 
-// Can't have ADC reading something else
+// Can't have ADC VCC reading something else
 #if ( ANALOG_SUPPORT || \
     EMON_ANALOG_SUPPORT || \
     GUVAS12SD_SUPPORT || \
@@ -1342,7 +1342,8 @@
     MICS2710_SUPPORT || \
     MICS5525_SUPPORT || \
     NTC_SUPPORT || \
-    TMP3X_SUPPORT \
+    TMP3X_SUPPORT || \
+    MQ135_SUPPORT \
 )
 #undef ADC_MODE_VALUE
 #define ADC_MODE_VALUE ADC_TOUT_VALUE
@@ -1391,7 +1392,8 @@
     V9261F_SUPPORT || \
     VEML6075_SUPPORT || \
     VL53L1X_SUPPORT || \
-    HDC1080_SUPPORT \
+    HDC1080_SUPPORT || \
+    MQ135_SUPPORT \
 )
 #endif
 

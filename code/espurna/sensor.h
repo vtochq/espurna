@@ -318,5 +318,9 @@ void sensorLoop();
 #if HDC1080_SUPPORT
     #include "sensors/HDC1080Sensor.h"
 #endif
+
+#if MQ135_SUPPORT
+    #include "sensors/MQ135Sensor.h"
+#endif
 //--------------------------------------------------------------------------------
 

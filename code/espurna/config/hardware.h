@@ -4597,6 +4597,102 @@
 
 // -----------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------
+// Smart Life / Tuya 2Ch light switch
+// https://github.com/vtochq/custom/blob/master/SmartLifeSwitch.jpg
+// -----------------------------------------------------------------------------
+
+#elif defined(SMARTLIFE_2CH)
+    //used pins 2 4 5 12 13 15 16
+    //free pins 14
+
+    // Info
+    #define MANUFACTURER        "SMART_LIFE"
+    #define DEVICE              "SMARTLIFE_2CH"
+
+    // Buttons
+    #define BUTTON1_PIN         12
+    #define BUTTON2_PIN         5
+    //#define BUTTON3_PIN         4
+
+    #define BUTTON1_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+    #define BUTTON1_PRESS       BUTTON_MODE_NONE
+    #define BUTTON1_CLICK       BUTTON_MODE_TOGGLE
+    #define BUTTON1_DBLCLICK    BUTTON_MODE_NONE
+    #define BUTTON1_LNGCLICK    BUTTON_MODE_NONE
+    #define BUTTON1_LNGLNGCLICK BUTTON_MODE_RESET
+
+    #define BUTTON2_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+    #define BUTTON2_PRESS       BUTTON_MODE_NONE
+    #define BUTTON2_CLICK       BUTTON_MODE_TOGGLE
+    #define BUTTON2_DBLCLICK    BUTTON_MODE_NONE
+    #define BUTTON2_LNGCLICK    BUTTON_MODE_NONE
+    #define BUTTON2_LNGLNGCLICK BUTTON_MODE_RESET
+
+    #define BUTTON1_RELAY       1
+    #define BUTTON2_RELAY       2
+
+    // Relays
+    #define RELAY1_PIN          13
+    #define RELAY2_PIN          15
+    #define RELAY1_TYPE         RELAY_TYPE_NORMAL
+    #define RELAY2_TYPE         RELAY_TYPE_NORMAL
+
+    #define LED2_RELAY          1
+    #define LED3_RELAY          2
+
+    // LEDs
+    #define LED2_PIN            16
+    #define LED2_PIN_INVERSE    1
+    #define LED3_PIN            2
+    #define LED3_PIN_INVERSE    1
+    #define LED2_MODE         LED_MODE_FOLLOW_INVERSE
+    #define LED3_MODE         LED_MODE_FOLLOW_INVERSE
+
+    #define LED1_PIN            0
+    #define LED1_PIN_INVERSE    0
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// JQ-200 / JQ-300 Air Quality sensor
+// http://
+// -----------------------------------------------------------------------------
+#elif defined(JQ_200)
+
+    // Info
+    #define MANUFACTURER                "China"
+    #define DEVICE                      "JQ-200"
+
+    //#define ANALOG_SUPPORT              1
+    #define MQ135_SUPPORT               1
+    //#define ADC_MODE_VALUE              TOUT
+    #define I2C_SDA_PIN                 1
+    #define I2C_SCL_PIN                 3
+    #define HDC1080_SUPPORT             1
+
+
+    // Button
+    #define BUTTON1_PIN                 4
+    #define BUTTON1_CONFIG              BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH | BUTTON_SET_PULLUP
+    #define BUTTON1_CLICK               BUTTON_ACTION_NONE
+    #define BUTTON1_LNGLNGCLICK         BUTTON_ACTION_RESET
+    
+    // LED
+    // Red
+    #define LED1_PIN                    13
+    #define LED1_MODE                   LED_MODE_MANUAL
+    //#define LED1_PIN_INVERSE            1
+    // Green
+    #define LED2_PIN                    5
+    #define LED2_MODE                   LED_MODE_MANUAL
+    //#define LED2_PIN_INVERSE            1
+    // Blue
+    #define LED3_PIN                    0
+    #define LED3_MODE                   LED_MODE_MANUAL
+    //#define LED3_PIN_INVERSE            1
+
+// -----------------------------------------------------------------------------
+
 #else
 
     #error "UNSUPPORTED HARDWARE!!"
