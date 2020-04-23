@@ -350,7 +350,8 @@ void i2cScan() {
     for (unsigned char address = 1; address < 127; address++) {
         unsigned char error = i2cCheck(address);
         if (error == 0) {
-            DEBUG_MSG_P(PSTR("[I2C] Device found at address 0x%02X\n"), address);
+		    i2c_write_uint8(address, 0xFC);
+            DEBUG_MSG_P(PSTR("[I2C] Device found at address 0x%02X; Serial ID (mid byte) is 0x%02X\n"), address, i2c_read_uint8(address));
             nDevices++;
         }
     }
